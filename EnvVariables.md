@@ -264,16 +264,16 @@
 
 ## Shared libraries
 
-`SHLIBPREFIX` - The prefix to prepend to shared library files
-`SHLIBSUFFIX` - The suffix to append to shared library files
+* `SHLIBPREFIX` - The prefix to prepend to shared library files
+* `SHLIBSUFFIX` - The suffix to append to shared library files
     * E.g. `.dll`
-`SHLIBVERSIONFLAGS` - ???
+* `SHLIBVERSIONFLAGS` - ???
     * E.g. `-Wl,-Bsymbolic`
 
 ## Shared objects
 
-`SHOBJPREFIX` - The prefix to prepend to shared object files
-`SHOBJSUFFIX` - The suffix to append to shared object files
+* `SHOBJPREFIX` - The prefix to prepend to shared object files
+* `SHOBJSUFFIX` - The suffix to append to shared object files
     * E.g. `.os`
 
 ## Size check
