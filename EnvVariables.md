@@ -15,36 +15,48 @@
 
 * `ENV` - The user's OS environment variables, stored as a dictionary
 * `UNIX_TIME` - Current timestamp in Unix time
+* `PLATFORM` - The name of the host computer's platform
+    * E.g. `win32`, `posix`
 * `PYTHONEXE` - A path leading to the python executable
+    * E.g. `/usr/bin/python`
     * E.g. `c:\users\user\.platformio\penv\scripts\python.exe`
 * `PIOHOME_DIR` - A path leading to the user's `\.platformio` directory
+    * E.g. `/home/user/.platformio`
     * E.g. `c:\users\user\.platformio`
     * E.g. `I:\User\.platformio`
 * `SHELL` - A path leading to the user's command line/shell/terminal executable
-    * E.g. `C:\Windows\System32\cmd.exe`
+    * E.g. `C:\Windows\System32\cmd.exe`, `sh`
 * `UPLOAD_PROTOCOL` -
     * E.g. `mbed`
 * `TOOLS` - A list of tool names
 
 ## Miscellaneous settings
 
-* `MAXLINELENGTH` - ???
-    * E.g. `2048`
 * `STATIC_AND_SHARED_OBJECTS_ARE_THE_SAME` -
     * 0 if static and shared objects _aren't_ the same
     * 1 if static and shared objects _are_ the same
+* `CONFIGUREDIR` - ???
+    * E.g. `#/.sconf_temp`
+* `CONFIGURELOG` - ???
+    * E.g. `#/config.log`
+* `DEBUG_TOOL` - ??? (may not exist)
+    * E.g. `custom`
+* `MAXLINELENGTH` - ??? (may not exist)
+    * E.g. `2048`
 
 ## Host info
 
 * `HOST_OS` - The name of the operating system of the host computer
-    * E.g. `win32`
+    * E.g. `win32`, `None`
 * `HOST_ARCH` - The name of the architecture of the host computer
-    * E.g. `x86_64`
+    * E.g. `x86_64`, `None`
 
 ## Target info
 
-* `TARGET_OS` - The name of the operating system of the target board (may be empty)
-* `TARGET_ARCH` - The name of the architecture of the target board (may be empty)
+* `TARGET_OS` - The name of the operating system of the target board (may be `None`)
+    * E.g. `None`
+* `TARGET_ARCH` - The name of the architecture of the target board (may be `None`)
+    * E.g. `None`
 
 ## Board info
 
@@ -66,9 +78,9 @@
 
 ## Build info
 
-* `BUILD_FLAGS` - A list of build flags
-    * Includes flags passed to the `build_flags` property in `platformio.ini`
+* `BUILD_FLAGS` - A list of build flags, as specified by `platformio.ini`
 * `BUILD_SCRIPT` - The path to the main build script
+    * E.g. `/home/user/.platformio/platforms/nxplpc/builder/main.py`
     * E.g. `c:\users\user\.platformio\platforms\nxplpc\builder\main.py`
     * E.g. `I:\User\.platformio\platforms\nxplpc\builder\main.py`
 
@@ -125,6 +137,8 @@
     * E.g. `.c`
 * `CFLAGS` - The flags passed to indicate the version of C in use
     * E.g. `-std=c11`
+* `CCVERSION` - The compiler's version number (may not be present)
+    * E.g. `8.3.1`
 * `CCFLAGS` - The flags passed to the C compiler by default
 
 ## C Compiler info for shared files
@@ -150,6 +164,8 @@
     * E.g. `.cc`
 * `CXXFLAGS` - The flags passed to indicate the version of C++ in use
     * E.g. `-std=c++11`
+* `CXXVERSION` - The compiler's version number (may not be present)
+    * E.g. `8.3.1`
 * `CPPFLAGS` - The flags passed to the C++ compiler by default
 
 ## C++ Compiler info for shared files
@@ -260,13 +276,13 @@
 * `LIBPREFIXES` - A list of prefixes to prepend to static libaries
     * E.g. `['$LIBPREFIX']`
 * `LIBSUFFIXES` - A list of suffixes to append to static libaries
-    * E.g. `['$LIBSUFFIX']`
+    * E.g. `['$LIBSUFFIX']`, `['$LIBSUFFIX', '$SHLIBSUFFIX']`
 
 ## Shared libraries
 
 * `SHLIBPREFIX` - The prefix to prepend to shared library files
 * `SHLIBSUFFIX` - The suffix to append to shared library files
-    * E.g. `.dll`
+    * E.g. `.dll`, `.so`
 * `SHLIBVERSIONFLAGS` - ???
     * E.g. `-Wl,-Bsymbolic`
 
